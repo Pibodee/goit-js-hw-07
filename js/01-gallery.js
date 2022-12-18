@@ -15,11 +15,11 @@ gallery.addEventListener('click', (evt) => {
     const largeImg = basicLightbox.create(`<img src = ${largeUrl} width 800 height 600>`)
     largeImg.show()
 
-    const link = document.querySelectorAll('.gallery__link')
+    const links = document.querySelectorAll('.gallery__link')
 
-    link.forEach(opened => {
-        if (opened.getAttribute('href') == largeUrl) {
-            opened.addEventListener('keydown', e => {
+    links.forEach(link => {
+        if (link.getAttribute('href') === largeUrl) {
+            link.addEventListener('keydown', e => {
                 if (e.key === 'Escape') {
                     largeImg.close()
                 }return
@@ -29,4 +29,4 @@ gallery.addEventListener('click', (evt) => {
 })
 
 
-// console.log(galleryItems);
+console.log(galleryItems);
