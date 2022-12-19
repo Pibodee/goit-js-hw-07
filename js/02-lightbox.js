@@ -3,16 +3,13 @@ import { galleryItems } from './gallery-items.js';
 
 const gallery = document.querySelector('.gallery')
 
-const markup = galleryItems.map(({ preview, original, description }) => `<a href="${original}" class="gallery__item"><img src="${preview}" data-source = "${original}" alt="${description}" class="gallery__image"></a>`).join('')
+const markup = galleryItems.map(({ preview, original, description }) => `<li><a href="${original}" class="gallery__item"><img src="${preview}" data-source = "${original}" alt="${description}" class="gallery__image"></a></li>`).join('')
 gallery.insertAdjacentHTML('afterbegin', markup);
-
-gallery.addEventListener("click", evt => {
-  evt.preventDefault();
-})
 
 const slide = new SimpleLightbox(".gallery a", {
     captionsData: `alt`,
     captionDelay: `250`,
+  captionPosition: `bottom`
 });
 
 

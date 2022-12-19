@@ -10,7 +10,8 @@ gallery.addEventListener('click', (evt) => {
     evt.preventDefault();
     if (!evt.target.classList.contains('gallery__image')) {
         return
-    } 
+    }
+    
     const largeUrl = evt.target.dataset.source;
     const largeImg = basicLightbox.create(`<img src = ${largeUrl} width 800 height 600>`)
     largeImg.show()
